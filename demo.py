@@ -17,6 +17,7 @@ X_train, y_train, X_test, y_test = train[:, :-
 pla = linear_model.Perceptron()
 pla.fit(X_train, y_train.ravel())
 y_pred = pla.predict(X_test)
+print("PLA: Ti le du doan chinh xac", end='\t')
 print(pla.score(X_test, y_test))
 
 #CART
@@ -25,7 +26,7 @@ cart = tree.DecisionTreeClassifier(criterion='gini')
 cart.fit(X_train, y_train)
 
 y_pred = cart.predict(X_test)
-
+print("Cart: Ti le du doan chinh xac", end='\t')
 print(cart.score(X_test, y_test))
 
 # ID3
@@ -33,4 +34,5 @@ id3 = tree.DecisionTreeClassifier(criterion='entropy')
 id3.fit(X_train, y_train)
 
 y_pred = id3.predict(X_test)
+print("ID3 Ti le du doan chinh xac: ", end='\t')
 print(id3.score(X_test, y_test))
